@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+  background-color: #f4f6f9;
+}
+
+.sidebar {
+  width: 220px;
+  background: #1e293b;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 15px;
+  padding: 8px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #334155;
+}
+
+.content {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+button.primary {
+  background: #2563eb;
+  color: white;
+}
+
+button.danger {
+  background: #dc2626;
+  color: white;
+}
+
+button.secondary {
+  background: #64748b;
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+thead {
+  background: #e2e8f0;
+}
+
+tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+}

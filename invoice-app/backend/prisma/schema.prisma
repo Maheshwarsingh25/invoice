@@ -1,0 +1,30 @@
+model Invoice {
+  id            Int           @id @default(autoincrement())
+  invoiceNumber String        @unique
+  customerName  String
+  issueDate     DateTime      @default(now())
+  dueDate       DateTime
+  status        String        @default("DRAFT") // DRAFT | PAID
+  isArchived    Boolean       @default(false)
+  lineItems     InvoiceLine[]
+  payments      Payment[]
+  createdAt     DateTime      @default(now())
+}
+
+model InvoiceLine {
+  id          Int     @id @default(autoincrement())
+  invoiceId   Int
+  invoice     Invoice @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+  description String
+  quantity    Int
+  unitPrice   Float
+  lineTotal   Float
+}
+
+model Payment {
+  id          Int      @id @default(autoincrement())
+  invoiceId   Int
+  invoice     Invoice  @relation(fields: [invoiceId], references: [id])
+  amount      Float
+  paymentDate DateTime @default(now())
+}
